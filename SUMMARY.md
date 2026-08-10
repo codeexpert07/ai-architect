@@ -6,7 +6,8 @@
 - AI Architect Roadmap
 
 ## Part I – Foundations
-- What is an AI Architect?
+- [01 — The AI Architect Mindset](chapters/01-ai-architect-mindset/)
+- [02 — Generative AI Fundamentals](chapters/02-generative-ai-fundamentals/)
 - AI Landscape
 - Generative AI Fundamentals
 - Large Language Models
