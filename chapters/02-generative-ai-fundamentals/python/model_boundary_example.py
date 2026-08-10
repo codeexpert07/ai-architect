@@ -1,5 +1,4 @@
 from dataclasses import dataclass
-from typing import Protocol
 
 
 @dataclass(frozen=True)
@@ -19,9 +18,9 @@ class GenerationResponse:
     output_tokens: int
 
 
-class AiTextGenerator(Protocol):
+class AiTextGenerator:
     def generate(self, request: GenerationRequest) -> GenerationResponse:
-        ...
+        raise NotImplementedError
 
 
 class CustomerSupportService:
