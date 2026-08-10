@@ -38,7 +38,7 @@ The focus is on understanding not only *how* AI systems work, but *why* architec
 | Chapter | Topic | Status |
 |---|---|---|
 | [01](chapters/01-ai-architect-mindset/) | **The AI Architect Mindset** | ✅ Available |
-| 02 | Generative AI Fundamentals | Planned |
+| [02](chapters/02-generative-ai-fundamentals/) | **Generative AI Fundamentals** | ✅ Available |
 | 03 | LLM Internals | Planned |
 | 04 | Prompt Engineering & Context Engineering | Planned |
 | 05 | Embeddings & Vector Databases | Planned |
