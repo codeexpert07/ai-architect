@@ -1,0 +1,10 @@
+flowchart TD
+    Client[Client] --> API[API / Authentication / Rate Limiting / Tenant Isolation]
+    API --> Orchestrator[AI Application / Orchestrator]
+    Orchestrator --> Context[Context / Data / RAG / Tools]
+    Orchestrator --> Gateway[Model Gateway]
+    Gateway --> Model[Model]
+    Model --> Validation[Output Validation / Guardrails]
+    Context --> Validation
+    Validation --> Application[Application / Workflow]
+    Application --> Observability[Observability / Evaluation]
