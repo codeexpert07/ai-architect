@@ -8,6 +8,7 @@
 ## Part I – Foundations
 - [01 — The AI Architect Mindset](chapters/01-ai-architect-mindset/)
 - [02 — Generative AI Fundamentals](chapters/02-generative-ai-fundamentals/)
+- [03 — Large Language Model Internals](chapters/03-llm-internals/)
 - AI Landscape
 - Large Language Models
 - Transformer Architecture

@@ -8,38 +8,13 @@ This repository aims to become a complete AI Architect handbook covering everyth
 
 The focus is on understanding not only *how* AI systems work, but *why* architectural decisions matter in production.
 
-## Who is this for?
-
-- Software Architects
-- Senior Software Engineers
-- AI Engineers
-- Tech Leads
-- Engineering Managers
-- Students transitioning into AI Engineering
-
-## What You'll Learn
-
-- Generative AI Fundamentals
-- Large Language Models (LLMs)
-- Prompt Engineering
-- Embeddings & Vector Databases
-- Retrieval-Augmented Generation (RAG)
-- AI Agents & Multi-Agent Systems
-- Model Context Protocol (MCP)
-- AI Memory & Context Engineering
-- Guardrails & Evaluation
-- Observability & Monitoring
-- Production Deployment
-- Java & Python AI Development
-- AI Architecture Design Patterns
-
 ## Handbook Chapters
 
 | Chapter | Topic | Status |
 |---|---|---|
 | [01](chapters/01-ai-architect-mindset/) | **The AI Architect Mindset** | ✅ Available |
 | [02](chapters/02-generative-ai-fundamentals/) | **Generative AI Fundamentals** | ✅ Available |
-| 03 | LLM Internals | Planned |
+| [03](chapters/03-llm-internals/) | **Large Language Model Internals** | ✅ Available |
 | 04 | Prompt Engineering & Context Engineering | Planned |
 | 05 | Embeddings & Vector Databases | Planned |
 | 06 | Retrieval-Augmented Generation (RAG) | Planned |
@@ -67,21 +42,7 @@ chapters/
     └── exercises/
 ```
 
-See [`CONTRIBUTING.md`](CONTRIBUTING.md) for the chapter and diagram conventions.
-
-## Repository Roadmap
-
-The handbook will be developed incrementally, one polished chapter at a time. Each chapter will include:
-
-- Learning objectives
-- Architecture diagrams
-- Deep technical explanations
-- Java examples
-- Python examples
-- Production best practices
-- Common pitfalls
-- Interview questions
-- References
+See [`CONTRIBUTING.md`](CONTRIBUTING.md) for chapter and diagram conventions.
 
 ## Status
 
