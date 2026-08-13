@@ -98,7 +98,7 @@ By the later chapters, the handbook will connect these concepts to real model co
 | [01](chapters/01-ai-architect-mindset/) | **The AI Architect Mindset** | ✅ Available |
 | [02](chapters/02-generative-ai-fundamentals/) | **Generative AI Fundamentals** | ✅ Available |
 | [03](chapters/03-llm-internals/) | **Large Language Model Internals** | ✅ Available |
-| 04 | Prompt Engineering & Context Engineering | Planned |
+| [04](chapters/04-prompt-context-engineering/) | **Prompt Engineering & Context Engineering** | ✅ Available |
 | 05 | Embeddings & Vector Databases | Planned |
 | 06 | Retrieval-Augmented Generation (RAG) | Planned |
 | 07 | AI Agents & Agentic Architectures | Planned |
@@ -117,9 +117,10 @@ A recommended learning path is:
 
 1. Start with Chapter 1 to establish the AI Architect mindset and understand the architectural problem space.
 2. Continue through Chapters 2 and 3 to build a strong conceptual foundation in Generative AI and LLM internals.
-3. Progress through the remaining chapters in order unless you have a specific architectural topic to investigate.
-4. Use the architecture exercises and decision-making guidance to test whether you can apply the concepts rather than simply recall terminology.
-5. Use the references in each chapter for deeper study when a topic requires more detail.
+3. Study Chapter 4 to learn how prompts and runtime context become production architecture concerns.
+4. Progress through the remaining chapters in order unless you have a specific architectural topic to investigate.
+5. Use the architecture exercises and decision-making guidance to test whether you can apply the concepts rather than simply recall terminology.
+6. Use the references in each chapter for deeper study when a topic requires more detail.
 
 The chapters are deliberately designed to build on one another. Later implementation chapters will assume that the foundational concepts have been understood.
 
