@@ -15,7 +15,7 @@
 - Tokens & Tokenization
 
 ## Part II – Core Building Blocks
-- Prompt Engineering
+- [04 — Prompt Engineering & Context Engineering](chapters/04-prompt-context-engineering/)
 - Embeddings
 - Vector Databases
 - Context Windows
