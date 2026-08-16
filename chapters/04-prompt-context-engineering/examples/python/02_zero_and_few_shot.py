@@ -1,8 +1,7 @@
-"""Chapter 4.6-4.7: zero-shot and few-shot prompting.
+"""Chapter 4.6-4.7: zero-shot/few-shot prompt -> real LLM classification."""
 
-Examples are data selected for the current task; they are not application
-policy. A real system can replace select_examples() with semantic retrieval.
-"""
+import os
+from openai import OpenAI
 
 EXAMPLES = [
     ("I cannot log in after changing my password.", "ACCOUNT"),
@@ -11,38 +10,38 @@ EXAMPLES = [
 ]
 
 
-def zero_shot_prompt(ticket: str) -> str:
-    return (
-        "Classify the ticket as BILLING, ACCOUNT, TECHNICAL, or OTHER. "
-        "Return only the category.\n\nTicket:\n" + ticket
-    )
-
-
 def select_examples(ticket: str, limit: int = 2) -> list[tuple[str, str]]:
-    # Tiny deterministic stand-in for a real similarity selector.
     keywords = set(ticket.lower().split())
-    scored = sorted(
+    return sorted(
         EXAMPLES,
         key=lambda item: len(keywords & set(item[0].lower().split())),
         reverse=True,
-    )
-    return scored[:limit]
+    )[:limit]
+
+
+def zero_shot_prompt(ticket: str) -> str:
+    return "Classify as BILLING, ACCOUNT, TECHNICAL, or OTHER. Return only the category.\n\nTicket:\n" + ticket
 
 
 def few_shot_prompt(ticket: str) -> str:
-    demonstrations = "\n\n".join(
-        f"Input: {example}\nOutput: {label}"
-        for example, label in select_examples(ticket)
+    examples = "\n\n".join(f"Input: {x}\nOutput: {y}" for x, y in select_examples(ticket))
+    return f"Classify the ticket.\n\n{examples}\n\nInput: {ticket}\nOutput:"
+
+
+def call_model(prompt: str) -> str:
+    response = OpenAI().responses.create(
+        model=os.getenv("OPENAI_MODEL", "gpt-5.5"),
+        instructions="Follow the classification task exactly and return only the requested category.",
+        input=prompt,
     )
-    return f"""Classify the ticket.
+    return response.output_text.strip()
 
-{demonstrations}
 
-Input: {ticket}
-Output:"""
+def main() -> None:
+    ticket = "The API fails with HTTP 503 during checkout."
+    print("Zero-shot:", call_model(zero_shot_prompt(ticket)))
+    print("Few-shot:", call_model(few_shot_prompt(ticket)))
 
 
 if __name__ == "__main__":
-    print(zero_shot_prompt("The customer was charged twice."))
-    print("---")
-    print(few_shot_prompt("The API fails with HTTP 503."))
+    main()
