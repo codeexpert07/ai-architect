@@ -2,8 +2,8 @@
 
 This example uses the OpenAI Responses API so the architecture concepts are
 shown in a real model invocation rather than only a deterministic stand-in.
-It intentionally keeps provider-specific code at the outer edge of the
-application: PromptContract remains provider-neutral.
+The PromptContract and SupportContext data classes remain provider-neutral;
+the OpenAI SDK is kept at the application boundary.
 
 Requirements:
     pip install -r ../requirements.txt
@@ -13,41 +13,12 @@ Environment:
     export OPENAI_MODEL="gpt-5.5"  # optional
 """
 
-from dataclasses import dataclass
 import os
 
 from openai import OpenAI
 from pydantic import BaseModel, Field
 
-from importlib.util import module_from_spec, spec_from_file_location
-from pathlib import Path
-
-
-# Import the PromptContract data class from example 01 without requiring the
-# examples directory to be installed as a Python package.
-_PROMPT_PATH = Path(__file__).with_name("01_prompt_contract.py")
-_spec = spec_from_file_location("prompt_contract", _PROMPT_PATH)
-if _spec is None or _spec.loader is None:
-    raise ImportError(f"Cannot load {_PROMPT_PATH}")
-_prompt_module = module_from_spec(_spec)
-_spec.loader.exec_module(_prompt_module)
-PromptContract = _prompt_module.PromptContract
-
-
-@dataclass(frozen=True)
-class SupportContext:
-    """Authoritative application state projected into model context."""
-
-    plan: str
-    renewal_date: str
-    early_renewal_allowed: bool
-
-    def render(self) -> str:
-        return (
-            f"Plan: {self.plan}\n"
-            f"Renewal date: {self.renewal_date}\n"
-            f"Early renewal allowed: {self.early_renewal_allowed}"
-        )
+from common import PromptContract, SupportContext
 
 
 class SupportAnswer(BaseModel):
