@@ -1,26 +1,11 @@
 """Chapter 4.3-4.5: build a production-style prompt contract.
 
-This example deliberately avoids a provider SDK. The goal is to show the
-architecture boundary: instructions, data, user input, and output contract
-are explicit components rather than one uncontrolled string.
+The PromptContract is provider-neutral and is reused by the end-to-end
+OpenAI example. Keeping the contract separate from the SDK makes the
+application architecture portable across model providers.
 """
 
-from dataclasses import dataclass
-
-
-@dataclass(frozen=True)
-class PromptContract:
-    role: str
-    task: str
-    constraints: tuple[str, ...]
-    context: str
-    user_request: str
-    output_contract: str
-    failure_behavior: str
-
-    def render(self) -> str:
-        return f"""ROLE\n{self.role}\n\nTASK\n{self.task}\n\nCONSTRAINTS\n- """ + \
-            "\n- ".join(self.constraints) + f"\n\nCONTEXT\n<context>\n{self.context}\n</context>\n\nUSER REQUEST\n<user_request>\n{self.user_request}\n</user_request>\n\nOUTPUT CONTRACT\n{self.output_contract}\n\nFAILURE BEHAVIOR\n{self.failure_behavior}\n"""
+from common import PromptContract
 
 
 prompt = PromptContract(
@@ -36,6 +21,7 @@ prompt = PromptContract(
     output_contract="Return a concise answer and cite the supplied context.",
     failure_behavior="If the context is insufficient, say so instead of guessing.",
 )
+
 
 if __name__ == "__main__":
     print(prompt.render())
