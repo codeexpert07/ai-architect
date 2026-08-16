@@ -2,36 +2,34 @@
 
 These examples make the architecture concepts in Chapter 4 executable. **Every example from `01` through `14` now contains a complete path from application-side context/prompt construction to a real OpenAI Responses API call and application-side handling of the result.** `15_end_to_end_openai.py` remains a cross-cutting reference that combines the strongest patterns into one example with structured output.
 
-## Why this structure
+## Navigation
 
-A production AI architect needs to understand both sides of the boundary:
+- [← Back to Chapter 4](../README.md)
+- [Chapter 4 learning objectives](../README.md#learning-objectives)
+- [Chapter 4 architecture overview](../README.md#41-why-prompt-engineering-is-an-architecture-concern)
+- [Chapter 4 production checklist](../README.md#445-production-checklist)
 
-1. how application code constructs safe, bounded, versioned context;
-2. how that context is sent to an actual model API;
-3. how the probabilistic response returns to deterministic application code;
-4. where validation, authorization, business rules, telemetry, and fallbacks belong.
-
-The examples therefore use real LLM calls rather than pretending that printing a prompt is an end-to-end implementation.
+Use the links in the table below to jump directly to the runnable implementation for each chapter concept.
 
 ## Examples by chapter concept
 
 | Example | Chapter sections | Concepts demonstrated |
 |---|---|---|
-| `01_prompt_contract.py` | 4.1–4.5 | Prompt contract -> OpenAI call -> answer |
-| `02_zero_and_few_shot.py` | 4.6–4.7 | Example selection -> zero/few-shot prompts -> LLM classification |
-| `03_boundaries_and_output_validation.py` | 4.8–4.10 | Delimiters -> untrusted input -> structured LLM output -> validation |
-| `04_context_budget_and_assembly.py` | 4.11–4.12 | Token budget -> context selection -> assembled prompt -> LLM answer |
-| `05_authority_and_conversation_state.py` | 4.13–4.17 | State/compaction/ranking -> context -> LLM answer |
-| `06_tool_and_retrieval_context.py` | 4.18–4.19 | Tool filtering/retrieval normalization -> LLM answer |
-| `07_injection_and_least_privilege.py` | 4.20–4.23 | Authorization/injection checks -> model call -> safe answer |
-| `08_prompt_versioning_and_evaluation.py` | 4.24–4.26 | Versioned prompt -> real model -> regression evaluation |
-| `09_deterministic_controls_and_cost.py` | 4.27–4.28 | LLM decision -> deterministic business rule -> usage accounting |
-| `10_templates_and_model_portability.py` | 4.29–4.31 | Template/capability selection -> real model invocation |
-| `11_policy_composition_and_context_contracts.py` | 4.32–4.33 | Typed context contract/policy composition -> LLM |
-| `12_failure_handling_and_observability.py` | 4.34–4.36 | Degraded context -> LLM -> privacy-aware telemetry |
-| `13_workflow_and_antipatterns.py` | 4.37–4.40 | Production workflow -> model invocation -> application result |
-| `14_document_qa_and_release_checklist.py` | 4.41–4.45 | Evidence filtering -> document Q&A -> release checks |
-| `15_end_to_end_openai.py` | Cross-cutting | Reusable data classes -> Responses API -> structured output -> deterministic validation |
+| [`01_prompt_contract.py`](./python/01_prompt_contract.py) | 4.1–4.5 | Prompt contract → OpenAI call → answer |
+| [`02_zero_and_few_shot.py`](./python/02_zero_and_few_shot.py) | 4.6–4.7 | Example selection → zero/few-shot prompts → LLM classification |
+| [`03_boundaries_and_output_validation.py`](./python/03_boundaries_and_output_validation.py) | 4.8–4.10 | Delimiters → untrusted input → structured LLM output → validation |
+| [`04_context_budget_and_assembly.py`](./python/04_context_budget_and_assembly.py) | 4.11–4.12 | Token budget → context selection → assembled prompt → LLM answer |
+| [`05_authority_and_conversation_state.py`](./python/05_authority_and_conversation_state.py) | 4.13–4.17 | State/compaction/ranking → context → LLM answer |
+| [`06_tool_and_retrieval_context.py`](./python/06_tool_and_retrieval_context.py) | 4.18–4.19 | Tool filtering/retrieval normalization → LLM answer |
+| [`07_injection_and_least_privilege.py`](./python/07_injection_and_least_privilege.py) | 4.20–4.23 | Authorization/injection checks → model call → safe answer |
+| [`08_prompt_versioning_and_evaluation.py`](./python/08_prompt_versioning_and_evaluation.py) | 4.24–4.26 | Versioned prompt → real model → regression evaluation |
+| [`09_deterministic_controls_and_cost.py`](./python/09_deterministic_controls_and_cost.py) | 4.27–4.28 | LLM decision → deterministic business rule → usage accounting |
+| [`10_templates_and_model_portability.py`](./python/10_templates_and_model_portability.py) | 4.29–4.31 | Template/capability selection → real model invocation |
+| [`11_policy_composition_and_context_contracts.py`](./python/11_policy_composition_and_context_contracts.py) | 4.32–4.33 | Typed context contract/policy composition → LLM |
+| [`12_failure_handling_and_observability.py`](./python/12_failure_handling_and_observability.py) | 4.34–4.36 | Degraded context → LLM → privacy-aware telemetry |
+| [`13_workflow_and_antipatterns.py`](./python/13_workflow_and_antipatterns.py) | 4.37–4.40 | Production workflow → model invocation → application result |
+| [`14_document_qa_and_release_checklist.py`](./python/14_document_qa_and_release_checklist.py) | 4.41–4.45 | Evidence filtering → document Q&A → release checks |
+| [`15_end_to_end_openai.py`](./python/15_end_to_end_openai.py) | Cross-cutting | Reusable data classes → Responses API → structured output → deterministic validation |
 
 ## Standard end-to-end shape
 
