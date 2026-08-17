@@ -1,6 +1,6 @@
 # Chapter 4 Code Examples
 
-These examples make the architecture concepts in Chapter 4 executable. **Every example from `01` through `14` now contains a complete path from application-side context/prompt construction to a real OpenAI Responses API call and application-side handling of the result.** `15_end_to_end_openai.py` remains a cross-cutting reference that combines the strongest patterns into one example with structured output.
+These examples make the architecture concepts in Chapter 4 executable. **Every example from `01` through `14` now contains a complete path from application-side context/prompt construction to a real OpenAI Responses API call and application-side handling of the result.** `15_end_to_end_openai.py` remains a cross-cutting reference that combines the strongest patterns into one example with structured output. `16_security_boundaries.py` is intentionally provider-neutral so the security controls are visible without hiding them behind an LLM SDK.
 
 ## Navigation
 
@@ -31,6 +31,7 @@ Use the links in the table below to jump directly to the runnable implementation
 | [`13_workflow_and_antipatterns.py`](./python/13_workflow_and_antipatterns.py) | 4.37–4.40 | Production workflow → model invocation → application result |
 | [`14_document_qa_and_release_checklist.py`](./python/14_document_qa_and_release_checklist.py) | 4.41–4.45 | Evidence filtering → document Q&A → deterministic release checks |
 | [`15_end_to_end_openai.py`](./python/15_end_to_end_openai.py) | Cross-cutting | Reusable data classes → Responses API → structured output → deterministic authorization |
+| [`16_security_boundaries.py`](./python/16_security_boundaries.py) | Production refinement | Tenant isolation → untrusted tool output → least privilege → side-effect approval |
 
 ## Standard end-to-end shape
 
@@ -77,6 +78,7 @@ Then run any example through the project environment:
 uv run python python/01_prompt_contract.py
 uv run python python/02_zero_and_few_shot.py
 uv run python python/03_boundaries_and_output_validation.py
+uv run python python/16_security_boundaries.py
 # ...or any other example
 ```
 
