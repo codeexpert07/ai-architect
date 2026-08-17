@@ -4,6 +4,7 @@
 - Welcome
 - How to Use This Handbook
 - AI Architect Roadmap
+- Production AI Case Study Portfolio
 
 ## Part I – Foundations
 - [01 — The AI Architect Mindset](chapters/01-ai-architect-mindset/)
@@ -50,6 +51,13 @@
 - AI Design Patterns
 - Enterprise AI Architecture
 - Reference Architectures
+- Production Case Study Portfolio
+  - Intelligent Document Processing
+  - AI Software Engineering Platform
+  - Real-Time Fraud Detection
+  - Production Incident Intelligence
+  - Contract Intelligence
+- Cross-Case Architectural Themes
 - Real-world Case Studies
 - Interview Questions
 - Future of AI
