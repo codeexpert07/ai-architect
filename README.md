@@ -12,6 +12,8 @@ We cover everything from Large Language Models (LLMs) and Retrieval-Augmented Ge
 
 The focus is on understanding not only *how* AI systems work, but *why* architectural decisions matter in production.
 
+> **Important:** Production AI is broader than chatbots. The handbook deliberately uses non-chatbot systems such as document intelligence, software engineering AI, fraud detection, incident intelligence, and contract intelligence as recurring architectural case studies.
+
 ## Who is this for?
 
 This handbook is intended for people who design or build software systems and want to develop strong AI architecture skills:
@@ -87,9 +89,26 @@ Enterprise AI Architecture
         │
         ▼
 Architecture Patterns, Trade-offs & Anti-Patterns
+        │
+        ▼
+Production Case Studies
 ```
 
 By the later chapters, the handbook will connect these concepts to real model communication and production integration using technologies such as Java and Python. Early chapters intentionally prioritize **theory and architecture concepts over code** so that implementation decisions are grounded in a proper mental model.
+
+## Production Case Study Portfolio
+
+The handbook will use a portfolio of production systems rather than treating a chatbot as the universal AI application:
+
+1. **Intelligent Document Processing** — multimodal extraction, validation, confidence thresholds, asynchronous workflows, and human review.
+2. **AI Software Engineering Platform** — repository understanding, agentic workflows, tool calling, sandboxing, security analysis, and developer approval.
+3. **Real-Time Fraud Detection** — low-latency model serving, streaming features, risk scoring, policy engines, drift, and explainability.
+4. **Production Incident Intelligence** — observability data, RAG, evidence-backed reasoning, operational tools, approval workflows, and safe remediation.
+5. **Contract Intelligence** — long-document analysis, structured extraction, semantic comparison, provenance, risk rules, and enterprise governance.
+
+These systems are intentionally different. Together they expose the architect to batch and real-time workloads, probabilistic and deterministic components, human-in-the-loop and autonomous workflows, RAG and agentic systems, and regulated versus developer-facing environments.
+
+See [`CASE_STUDIES.md`](CASE_STUDIES.md) for the detailed reference flows, architectural concerns, and cross-case mapping.
 
 ## Handbook Chapters
 
@@ -110,6 +129,7 @@ By the later chapters, the handbook will connect these concepts to real model co
 | 13 | AI Infrastructure & Deployment | Planned |
 | 14 | Enterprise AI Architecture | Planned |
 | 15 | AI Architecture Patterns & Anti-Patterns | Planned |
+| 16 | **Production AI Case Studies** | Planned |
 
 ## How to Use This Handbook
 
@@ -119,8 +139,9 @@ A recommended learning path is:
 2. Continue through Chapters 2 and 3 to build a strong conceptual foundation in Generative AI and LLM internals.
 3. Study Chapter 4 to learn how prompts and runtime context become production architecture concerns.
 4. Progress through the remaining chapters in order unless you have a specific architectural topic to investigate.
-5. Use the architecture exercises and decision-making guidance to test whether you can apply the concepts rather than simply recall terminology.
-6. Use the references in each chapter for deeper study when a topic requires more detail.
+5. Revisit the production case studies while studying each architectural capability; use them to compare design choices across different workloads.
+6. Use the architecture exercises and decision-making guidance to test whether you can apply the concepts rather than simply recall terminology.
+7. Use the references in each chapter for deeper study when a topic requires more detail.
 
 The chapters are deliberately designed to build on one another. Later implementation chapters will assume that the foundational concepts have been understood.
 
@@ -157,6 +178,7 @@ The handbook is being developed incrementally. Each chapter is expected to provi
 - References for deeper study
 - Implementation examples when they provide meaningful value
 - Interview and design-discussion questions where appropriate
+- Connections to one or more production case studies when the topic benefits from a concrete system context
 
 The objective is **depth over speed**. A chapter is considered complete when it provides enough understanding for an architect to reason about real production systems, not merely when it introduces a list of technologies.
 
