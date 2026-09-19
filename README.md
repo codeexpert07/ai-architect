@@ -118,7 +118,7 @@ See [`CASE_STUDIES.md`](CASE_STUDIES.md) for the detailed reference flows, archi
 | [02](chapters/02-generative-ai-fundamentals/) | **Generative AI Fundamentals** | ✅ Available |
 | [03](chapters/03-llm-internals/) | **Large Language Model Internals** | ✅ Available |
 | [04](chapters/04-prompt-context-engineering/) | **Prompt Engineering & Context Engineering** | ✅ Available |
-| 05 | Embeddings & Vector Databases | Planned |
+| [05](chapters/05-embeddings-vector-databases/) | **Embeddings & Vector Databases** | 🚧 In Progress |
 | 06 | Retrieval-Augmented Generation (RAG) | Planned |
 | 07 | AI Agents & Agentic Architectures | Planned |
 | 08 | Model Context Protocol (MCP) | Planned |
