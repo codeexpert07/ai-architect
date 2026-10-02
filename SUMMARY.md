@@ -17,8 +17,7 @@
 
 ## Part II – Core Building Blocks
 - [04 — Prompt Engineering & Context Engineering](chapters/04-prompt-context-engineering/)
-- Embeddings
-- Vector Databases
+- [05 — Embeddings & Vector Databases](chapters/05-embeddings-vector-databases/)
 - Context Windows
 - Retrieval-Augmented Generation (RAG)
 - Advanced RAG
